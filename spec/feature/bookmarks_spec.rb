@@ -1,10 +1,9 @@
-
 feature 'View bookmarks' do
-  scenario 'Should display bookmarks when user visits bookmarks page' do
+  scenario 'Should display all bookmarks in list' do
     visit('/bookmarks')
 
-    bookmark = page.find('.bookmark')
+    bookmarks = page.find_all('.bookmark')
 
-    expect(bookmark[:href]).to eq('https://somelink.com')
+    expect(bookmarks.length).to eq(2)
   end
 end
