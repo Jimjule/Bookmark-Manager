@@ -7,6 +7,9 @@ class Bookmarks < Sinatra::Base
   end
 
   get '/bookmarks' do
+    @bookmarks = []
+    @bookmarks << Bookmark.create("https://google.com", "Google")
+    @bookmarks << Bookmark.create("https://google.com", "Google")
     erb :bookmarks
   end
 
