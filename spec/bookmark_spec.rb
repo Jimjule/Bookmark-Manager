@@ -1,8 +1,16 @@
 require 'bookmark'
 
 describe Bookmark do
-  it "returns a list of the bookmarks" do
-    bookmark = Bookmark.new("https://google.com")
-    expect(bookmark.link).to eq('https://google.com')
+
+  let(:link) {"https://google.com"}
+  let(:name) {"Google"}
+  let(:bookmark) {Bookmark.new(link, name)}
+
+  it "returns a link" do
+    expect(bookmark.link).to eq(link)
+  end
+
+  it "returns a name" do
+    expect(bookmark.name).to eq(name)
   end
 end
