@@ -15,9 +15,10 @@ describe Bookmark do
   end
 
   it 'returns all instances of bookmark' do
-    bookmarks = []
-    3.times { bookmarks << Bookmark.create(link, name) }
+    bookmarks = Bookmark.all
 
-    expect(bookmarks).to eq(Bookmark.all)
+    expect(bookmarks).to include("http://www.makersacademy.com")
+    expect(bookmarks).to include("http://www.google.com")
+    expect(bookmarks).to include("http://www.destroyallsoftware.com")
   end
 end
