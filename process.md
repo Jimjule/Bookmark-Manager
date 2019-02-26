@@ -25,3 +25,8 @@ RED - Saved selection of all from bookmark table to 'all_bookmarks'
 GREEN - .all method returns mapped selection
 
 PASSED ALL TESTS, 100% COVERAGE
+
+
+REFACTOR - Controller now takes data from app.rb instead of having a hard-coded list, and bookmarks view prints a list from bookmarks.all
+
+PASSED ALL TESTS, 100% COVERAGE

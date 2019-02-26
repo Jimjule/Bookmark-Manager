@@ -1,4 +1,5 @@
-require 'sinatra'
+require "sinatra"
+require "./lib/bookmark.rb"
 
 class Bookmarks < Sinatra::Base
 
@@ -7,9 +8,8 @@ class Bookmarks < Sinatra::Base
   end
 
   get '/bookmarks' do
-    @bookmarks = []
-    @bookmarks << Bookmark.create("https://google.com", "Google")
-    @bookmarks << Bookmark.create("https://google.com", "Google")
+    @current_bookmarks = Bookmark.create("https://google.com", "Google")
+    @bookmarks = @current_bookmarks.all
     erb :bookmarks
   end
 

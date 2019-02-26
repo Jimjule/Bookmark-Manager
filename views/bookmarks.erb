@@ -1,3 +1,4 @@
-
-<a class='bookmark' href='<%= @bookmarks[0].link %>'> <%= @bookmarks[0].name %> </a>
-<a class='bookmark' href='<%= @bookmarks[1].link %>'> <%= @bookmarks[1].name %> </a>
+<% @bookmarks.each do | bookmark | %>
+  - <% bookmark %>
+  <br/>
+<% end %>
