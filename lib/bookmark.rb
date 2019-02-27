@@ -1,13 +1,15 @@
 require "pg"
 
 class Bookmark
-  @bookmarks = []
-  attr_reader :link, :name
+  attr_reader :link, :name, :bookmarks
 
   def self.all
-    marks = PG.connect :dbname => 'bookmark_manager'
-    all_bookmarks = marks.exec("SELECT * FROM bookmarks;")
-    all_bookmarks.map { | bookmark | bookmark['url'] }
+    @bookmarks = []
+    marks = PG.connect( dbname: 'bookmark_manager')
+    marks.exec("SELECT * FROM bookmarks;").each do | bookmark |
+      @bookmarks << bookmark
+    end
+    @bookmarks
   end
 
   def self.create(link, name)
