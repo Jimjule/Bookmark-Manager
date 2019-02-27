@@ -5,7 +5,12 @@ class Bookmark
 
   def self.all
     @bookmarks = []
-    marks = PG.connect( dbname: 'bookmark_manager')
+
+    if ENV['ENVIRONMENT'] == 'test'
+      marks = PG.connect( dbname: 'bookmark_manager_test')
+    else
+      marks = PG.connect( dbname: 'bookmark_manager')
+    end
     marks.exec("SELECT * FROM bookmarks;").each do | bookmark |
       @bookmarks << bookmark
     end

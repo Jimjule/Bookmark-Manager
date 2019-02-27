@@ -25,4 +25,7 @@ Users manage their bookmarks
 Can be accessed at:
 https://drive.google.com/open?id=1f844nLpcSBc0DCNHrYc5gy1TsfsMYQeM
 
-# 
+#
+
+
+# REMINDER: UPDATE WITH TEST DATABASE SETUP INSTRUCTIONS

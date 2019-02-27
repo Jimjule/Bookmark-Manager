@@ -1,8 +1,12 @@
+ENV['ENVIRONMENT'] = 'test'
+
+require './app.rb'
+require 'spec_test_prep.rb'
+require 'capybara'
 require 'capybara/rspec'
+require 'pg'
 require 'simplecov'
 require 'simplecov-console'
-require './app.rb'
-require 'capybara'
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   SimpleCov::Formatter::Console,
@@ -11,6 +15,12 @@ SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
 SimpleCov.start
 
 RSpec.configure do |config|
+
+  config.before(:each) do
+    load_test_database
+  end
+
+
   config.expect_with :rspec do |expectations|
     expectations.include_chain_clauses_in_custom_matcher_descriptions = true
   end
