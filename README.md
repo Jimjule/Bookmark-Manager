@@ -6,7 +6,9 @@ As an internet user,
 So that I can quickly revisit my favourite websites,
 I would like to view a list of bookmarks
 
-Add new bookmarks
+As an internet user,
+So that I can save my favourite sites,
+I would like to add a new bookmark
 
 Delete bookmarks
 

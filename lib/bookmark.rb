@@ -12,7 +12,7 @@ class Bookmark
       marks = PG.connect( dbname: 'bookmark_manager')
     end
     marks.exec("SELECT * FROM bookmarks;").each do | bookmark |
-      @bookmarks << bookmark
+      @bookmarks << bookmark["url"]
     end
     @bookmarks
   end

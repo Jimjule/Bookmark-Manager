@@ -30,3 +30,12 @@ PASSED ALL TESTS, 100% COVERAGE
 REFACTOR - Controller now takes data from app.rb instead of having a hard-coded list, and bookmarks view prints a list from bookmarks.all
 
 PASSED ALL TESTS, 100% COVERAGE
+
+
+Set up a test database to be referenced during test cases instead of the production database.
+
+REFACTOR - Made two methods into a single load_test_database method.
+
+Set up a test environment variable so that the spec references the test database.
+
+REFACTOR - Moved bookmark functionality to index view.
