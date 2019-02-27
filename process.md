@@ -59,3 +59,41 @@ GREEN - Added loop to controller that adds the submitted url to the appropriate 
 PASSED ALL TESTS, 100% COVERAGE
 
 REFACTOR - Moved loop to new class .create method to keep controller skinny and to separate concerns
+
+
+Step 11 - Modified databases to include title column
+
+Modified add bookmark feature test to fill in a title field and expect to see it
+
+RED - See above
+
+(Unable to find field title)
+
+RED - Added title field
+
+(Expected to see title)
+
+GREEN - Updated .create class method to add title to database, prints database as hash
+
+PASSED ALL TESTS, 100% COVERAGE
+
+
+Now I can see the url and the title, but I only want to show the title in the hash.
+
+TEST - Updated feature test to expect a link with href value of url.
+
+RED - See above
+
+(Expected to find link)
+
+RED - Updated bookmarks erb to show a href using the hash values
+
+(Test looking for urls in content)
+
+RED - Updated tests to expect a href with a url and title
+
+(Could not find title)
+
+GREEN - Debugged method to insert url and title together, instead of separately with missing values.
+
+PASSED ALL TESTS, 100% COVERAGE

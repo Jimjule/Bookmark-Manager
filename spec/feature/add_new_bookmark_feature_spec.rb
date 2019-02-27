@@ -3,8 +3,9 @@ feature 'Add bookmarks' do
 
     visit('/')
     fill_in 'url', with: 'https://hackernews.com'
+    fill_in 'title', with: 'Hackers'
     click_button 'Add Bookmark'
-    expect(page).to have_content("http://www.destroyallsoftware.com")
-    expect(page).to have_content("https://hackernews.com")
+    expect(page).to have_link("Hackers", :href => "https://hackernews.com")
+    expect(page).to have_link("Google", :href => "http://www.google.com")
   end
 end
