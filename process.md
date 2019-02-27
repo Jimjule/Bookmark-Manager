@@ -39,3 +39,23 @@ REFACTOR - Made two methods into a single load_test_database method.
 Set up a test environment variable so that the spec references the test database.
 
 REFACTOR - Moved bookmark functionality to index view.
+
+TEST - Added feature test expecting user to fill in a form with a url, and then submit the form and see the updated page with the url in the database.
+
+RED - See above
+
+(No url field)
+
+RED - Added url field
+
+(No button to click)
+
+RED - Added button
+
+(Expected page to include new url)
+
+GREEN - Added loop to controller that adds the submitted url to the appropriate database.
+
+PASSED ALL TESTS, 100% COVERAGE
+
+REFACTOR - Moved loop to new class .create method to keep controller skinny and to separate concerns
