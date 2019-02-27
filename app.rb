@@ -8,6 +8,11 @@ class Bookmarks < Sinatra::Base
     erb :bookmarks
   end
 
+  post '/' do
+    Bookmark.create(params[:url])
+    redirect '/'
+  end
+
   get '/bookmarks' do
 
   end
