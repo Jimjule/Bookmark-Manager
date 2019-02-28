@@ -128,4 +128,7 @@ RED - Defined the .delete method
 
 (Expected to find Google with href)
 
-RED -
+GREEN - Debugged the .delete method using p to get visibility
+
+PASSED ALL TESTS, 100% COVERAGE
+Works as intended.

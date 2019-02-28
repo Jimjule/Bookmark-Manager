@@ -14,7 +14,6 @@ class Bookmark
     marks.exec("SELECT * FROM bookmarks;").each do | bookmark |
       @bookmarks << Bookmark.new(bookmark["url"], bookmark["title"], bookmark["id"])
     end
-    p @bookmarks
     @bookmarks
   end
 
