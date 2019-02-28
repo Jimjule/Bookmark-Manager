@@ -5,6 +5,7 @@ class Bookmarks < Sinatra::Base
 
   get '/' do
     @bookmarks = Bookmark.all
+    p "@bookmarks in get / route #{@bookmarks}"
     erb :bookmarks
   end
 
@@ -14,8 +15,8 @@ class Bookmarks < Sinatra::Base
   end
 
   post '/delete' do
-    p params[:id]
-    Bookmark.delete(params[:id])
+    p " params[:delete] in /delete #{params[:delete]} "
+    Bookmark.delete(params[:delete])
     redirect '/'
   end
 
