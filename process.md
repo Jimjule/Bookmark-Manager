@@ -97,3 +97,35 @@ RED - Updated tests to expect a href with a url and title
 GREEN - Debugged method to insert url and title together, instead of separately with missing values.
 
 PASSED ALL TESTS, 100% COVERAGE
+
+
+Step 12 - Implement deleting bookmarks
+
+TEST - Created feature test, expecting the user to be able to delete an existing bookmark
+
+RED - See above
+
+(Unable to find select box)
+
+RED - Created dropdown form and delete button
+
+(Expected not to find link, but it did)
+
+RED - Added Bookmark.delete method to view
+
+(Expected to find a different link, but running non-existent method breaks the page)
+
+
+Before addressing this error, it is worth considering how existing bookmarks will be deleted, and since the most pragmatic method involves referencing the id in the database, it will be necessary to pass more information to the view, so a hash is impractical.
+
+REFACTOR - Changed hash to array, .all now pushes object instances to view instead of hash
+
+DEBUG - Many tests expecting hashes changed to work with arrays and new id parameter
+
+(Expected to find a different link, but running non-existent method breaks the page)
+
+RED - Defined the .delete method
+
+(Expected to find Google with href)
+
+RED -

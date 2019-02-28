@@ -1,10 +1,10 @@
 require "pg"
 
 class Bookmark
-  attr_reader :link, :name, :bookmarks
+  attr_reader :url, :title, :id, :bookmarks
 
   def self.all
-    @bookmarks = Hash.new
+    @bookmarks = Array.new
 
     if ENV['ENVIRONMENT'] == 'test'
       marks = PG.connect( dbname: 'bookmark_manager_test')
@@ -12,8 +12,9 @@ class Bookmark
       marks = PG.connect( dbname: 'bookmark_manager')
     end
     marks.exec("SELECT * FROM bookmarks;").each do | bookmark |
-      @bookmarks[bookmark["url"]] = bookmark["title"]
+      @bookmarks << Bookmark.new(bookmark["url"], bookmark["title"], bookmark["id"])
     end
+    p @bookmarks
     @bookmarks
   end
 
@@ -26,8 +27,19 @@ class Bookmark
     marks.exec("INSERT INTO bookmarks (url, title) VALUES ('#{link}', '#{title}');")
   end
 
-  def initialize(link, name)
-    @link = link
-    @name = name
+  def self.delete(id)
+    if ENV['ENVIRONMENT'] == 'test'
+      marks = PG.connect( dbname: 'bookmark_manager_test')
+    else
+      marks = PG.connect( dbname: 'bookmark_manager')
+    end
+    marks.exec("DELETE FROM bookmarks WHERE id = #{id};")
+
+  end
+
+  def initialize(url, title, id)
+    @url = url
+    @title = title
+    @id = id
   end
 end

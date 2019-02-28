@@ -1,5 +1,5 @@
-<% @bookmarks.each do | url, title | %>
-  <a href="<%= url %>"> <%= title %> </a>
+<% @bookmarks.each do | bookmark | %>
+  <a href="<%= bookmark.url %>"> <%= bookmark.title %> </a>
   <br/>
 <% end %>
 
@@ -7,4 +7,13 @@
   <input type="text" name="url">
   <input type="text" name="title">
   <input type="submit" value="Add Bookmark">
+</form>
+
+<form action="/delete" method="post">
+  <select name="delete">
+    <% @bookmarks.each do | bookmark | %>
+      <option value="<%= bookmark.id %>"><%= bookmark.title %></option>
+    <% end %>
+  </select>
+  <input type="submit" value="Delete Bookmark">
 </form>
