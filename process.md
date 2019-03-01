@@ -132,3 +132,14 @@ GREEN - Debugged the .delete method using p to get visibility
 
 PASSED ALL TESTS, 100% COVERAGE
 Works as intended.
+
+
+Step 13 - Update existing bookmark
+
+TEST - Made a feature test, expecting that I can select an existing bookmark and then change the url and/or title.
+
+RED - See above.
+
+(Unable to find select box)
+
+RED - 
