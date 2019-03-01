@@ -142,4 +142,28 @@ RED - See above.
 
 (Unable to find select box)
 
+REFACTOR - Added placeholder text to text fields to avoid confusion.
+
+RED - Added select box
+
+(Unable to find update_url)
+
+RED - Added url_update and title_update fields
+
+(Unable to find update button)
+
+RED - Added update button
+
+(Expected to find link Twitter with matching url)
+
+TEST - Unit test for .update method, expecting title and url to match updated information
+
+(Undefined method update, feature test also failing)
+
+RED - Defined method to update the bookmark information by id
+
+(Undefined method url, feature test still failing)
+
+REFACTOR - Changed prep spec to drop and create table instead of truncating
+
 RED - 

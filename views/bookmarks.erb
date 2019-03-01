@@ -22,10 +22,13 @@
 
 <h1>Update</h1>
 <form action="/update" method="post">
-  <select name="delete">
+  <select name="update">
     <% @bookmarks.each do | bookmark | %>
       <option value="<%= bookmark.id %>"><%= bookmark.title %></option>
     <% end %>
   </select>
-  <input type="submit" value="Delete Bookmark">
+
+  <input type="text" name="url_update" placeholder="Update URL">
+  <input type="text" name="title_update" placeholder="Update Title">
+  <input type="submit" value="Update">
 </form>

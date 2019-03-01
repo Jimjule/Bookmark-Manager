@@ -33,12 +33,30 @@ class Bookmark
       marks = PG.connect( dbname: 'bookmark_manager')
     end
     marks.exec("DELETE FROM bookmarks WHERE id = #{id};")
+  end
 
+  def self.update(id, url, title)
+    if ENV['ENVIRONMENT'] == 'test'
+      marks = PG.connect( dbname: 'bookmark_manager_test')
+    else
+      marks = PG.connect( dbname: 'bookmark_manager')
+    end
+    self.find(id)
+    marks.exec("UPDATE bookmarks SET url = '#{url}', title = '#{title}' WHERE id = #{id};")
   end
 
   def initialize(url, title, id)
     @url = url
     @title = title
     @id = id
+  end
+
+  def self.find(id)
+    if ENV['ENVIRONMENT'] == 'test'
+      marks = PG.connect( dbname: 'bookmark_manager_test')
+    else
+      marks = PG.connect( dbname: 'bookmark_manager')
+    end
+    marks.exec("SELECT FROM bookmarks WHERE id = #{id}")
   end
 end

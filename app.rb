@@ -20,6 +20,12 @@ class Bookmarks < Sinatra::Base
     redirect '/'
   end
 
+  post '/update' do
+    " params[:update] in /update #{params[:update]} "
+    Bookmark.update(params[:update], params[:title_update], params[:url_update])
+    redirect '/'
+  end
+
   run! if app_file == $0
 
 end

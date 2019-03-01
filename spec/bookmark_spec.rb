@@ -24,4 +24,19 @@ describe Bookmark do
   # end
 
   # NEEDS DOUBLES
+
+  it "creates a bookmark" do
+
+  end
+
+  it "deletes a bookmark" do
+
+  end
+
+  it "updates a bookmark" do
+    Bookmark.update(2, 'https://www.twitter.com', 'Twitter')
+    expect(Bookmark.all[1].url).to include('https://www.twitter.com')
+    expect(Bookmark.all[1].title).to include('Twitter')
+  end
+
 end
