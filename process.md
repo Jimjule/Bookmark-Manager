@@ -6,7 +6,7 @@
 
 Now that the .all method returns bookmarks, it's time to make use of the pg gem and refactor .all to access the bookmark_manager database.
 
-REFACTOR - The previous test won't work as the query I'm about to make will not return objects. Refactored test to simple return all bookmarks.
+REFACTOR - The previous test won't work as the query I'm about to make will not return objects. Refactored test to simply return all bookmarks.
 
 Works as intended.
 
